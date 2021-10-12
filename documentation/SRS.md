@@ -11,7 +11,6 @@ Application should provide:
 
 ## Departments
 ### Display a list of departments
-
 The mode is designed to view a list of departments, average salary of departments, and also edit the department's info.
 
 ![Main page](mockups/main_page.png)
@@ -35,8 +34,10 @@ The mode is designed to view a list of departments, average salary of department
 
 #### "Delete DEPT" button
 
-"Delete DEPT" button redirects user to main page with the list of departments without deleted department. 
-All records about employees of this department have been removed from the database. 
+"Delete DEPT" button redirects user to the selection window requiring either to delete the department with all  
+employees, or to delete the department and reset the record of the employees' belonging to the department.
+If only a department is deleted, its employees are moved to the section "without department". if the department is  
+deleted together with the employees, the employee records are deleted from the database.
 
 #### "EDIT DEPT" button
 
@@ -101,8 +102,9 @@ Aggregate function of department's average salary: Average salary = Total salary
 
 #### "Delete" button
 
-"Delete" button redirects user to the webpage of running department with the list of employees without deleted
-employee.  
+"Delete" button redirects user to the confirmation window. Only after confirming the deletion, the employee is  
+removed from the database, and the user redirects to the webpage of running department with the list of employees  
+without deleted employee.  
 
 #### "EDIT" button
 
