@@ -83,9 +83,7 @@ DATABASES = {
         'HOST': '*',
         'PORT': '5432',
     },
-    'OPTIONS': {
-        'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
-    },
+
 }
 
 
