@@ -1,6 +1,6 @@
 [run]
 relative_files = True
-source = doublepoint
+source = grow
 [report]
 omit = */migrations/*
 exclude_lines =
