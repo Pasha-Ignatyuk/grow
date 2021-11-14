@@ -16,7 +16,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
+        pip install -r requirements.txt
     - name: Analysing the code with pylint  # SECRET_KEY is generated with DJANGO SECRET KEY GENERATOR
       run: |
         export SECRET_KEY="hjk-xg+c16x+i1%77bs2wi78h&sxn#l7!b6fzddtrv%*$p_mey"
