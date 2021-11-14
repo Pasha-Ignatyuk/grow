@@ -19,7 +19,7 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint  # SECRET_KEY is generated with DJANGO SECRET KEY GENERATOR
       run: |
-        export SECRET_KEY="2icr=w6x+lj-8idus+cs8ttzymtx1w9@azo*r4m=%$(veifq#$"
+        export SECRET_KEY="hjk-xg+c16x+i1%77bs2wi78h&sxn#l7!b6fzddtrv%*$p_mey"
         export DB_USER=${{ secrets.DB_USER }}
         export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
         export DB_NAME=${{ secrets.DB_NAME }}
