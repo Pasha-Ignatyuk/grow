@@ -19,4 +19,8 @@ jobs:
         pip install pylint
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py')
+        export SECRET_KEY="2icr=w6x+lj-8idus+cs8ttzymtx1w9@azo*r4m=%$(veifq#$"
+        export DB_USER=${{ secrets.DB_USER }}
+        export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+        export DB_NAME=${{ secrets.DB_NAME }}
+        pylint --load-plugins pylint_django hrm/department
