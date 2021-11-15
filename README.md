@@ -10,25 +10,24 @@
   - `export GROW_DB_NAME="the_name_of_your_database"`
   - `export DB_USER="the_name_of_database's_owner"`
   - `export DB_PASSWORD="the_database's_password"`
-- Open your settings.py file;
-- Replace in it:
-  - line containing SECRET_KEY with line `SECRET_KEY = os.environ.get('SECRET_KEY')`
-  - replace DATABASE settings with the following:
-  ```DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('GROW_DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': '*',
-        'PORT': '5432',
-    },
-    'OPTIONS': {
-        'isolation_level': psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE,
-    },
-}```
+
 - Also define some GITHUB REPO SECRETS for CI/CD correct work, specifically SECRET_KEY, GROW_DB_NAME, DB_USER, 
 DB_PASSWORD with the same values as in .bashrc file.
+
+**To install dependencies and run project You must:**  
+- Copy the project folder to your local computer;
+- Execute the following commands in the terminal: 
+  - python -m venv venv
+  - source venv/bin/activate
+  - pip install -r requirements.txt
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py createsuperuser
+  - enter name of superuser, e-mail, password and password confirmation
+  - python manage.py runserver
+
+To run pylint check manually execute the following command in the terminal:  
+- pylint --load-plugins pylint_django hrm/department
 
 [![Pylint Actions Status](https://github.com/Pasha-Ignatyuk/grow/workflows/Pylint/badge.svg)] 
 (https://github.com/Pasha-Ignatyuk/grow/actions)
