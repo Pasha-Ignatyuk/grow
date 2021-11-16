@@ -29,8 +29,6 @@ DB_PASSWORD with the same values as in .bashrc file.
 To run pylint check manually execute the following command in the terminal:  
 - pylint --load-plugins pylint_django hrm/department
 
-[![Pylint Actions Status](https://github.com/Pasha-Ignatyuk/grow/workflows/Pylint/badge.svg)] 
-(https://github.com/Pasha-Ignatyuk/grow/actions)
+![Pylint Actions Status](https://github.com/Pasha-Ignatyuk/grow/workflows/Pylint/badge.svg)
 
-[![Coverage Status](https://coveralls.io/repos/github/Pasha-Ignatyuk/grow/badge.svg?branch=master)]
-(https://coveralls.io/github/Pasha-Ignatyuk/grow?branch=master)
+![Coverage Status](https://coveralls.io/repos/github/Pasha-Ignatyuk/grow/badge.svg?branch=master)
