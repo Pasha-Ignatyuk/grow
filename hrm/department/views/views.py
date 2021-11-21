@@ -1,1 +1,3 @@
-"""View - is responsible for displaying information (visualization)"""
+from django.shortcuts import render
+
+# Create your views here.
