@@ -4,6 +4,7 @@ from django.db import models
 
 class Department(models.Model):
     """This is the department model"""
+    id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50)
 
     def __str__(self):
@@ -13,6 +14,7 @@ class Department(models.Model):
 
 class Employee(models.Model):
     """This is the employee model"""
+    id = models.AutoField(primary_key=True)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     surname = models.CharField(max_length=50)
