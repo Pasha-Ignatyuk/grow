@@ -1,6 +1,8 @@
 name: Django CI
 
-on: [push]
+on:
+  push:
+    branches: [master, develop]
 
 jobs:
   build:
@@ -44,6 +46,7 @@ jobs:
         export DB_USER=${{ secrets.DB_USER }}
         export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
         export GROW_DB_NAME=${{ secrets.GROW_DB_NAME }}
+        cd hrm
         python manage.py test
       env:
         POSTGRES_HOST:

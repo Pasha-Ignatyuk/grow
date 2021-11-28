@@ -20,7 +20,6 @@ DB_PASSWORD with the same values as in .bashrc file.
   - python -m venv venv
   - source venv/bin/activate
   - pip install -r requirements.txt
-  - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py createsuperuser
   - enter name of superuser, e-mail, password and password confirmation
@@ -29,6 +28,6 @@ DB_PASSWORD with the same values as in .bashrc file.
 To run pylint check manually execute the following command in the terminal:  
 - pylint --load-plugins pylint_django hrm/department
 
-![Pylint Actions Status](https://github.com/Pasha-Ignatyuk/grow/workflows/Pylint/badge.svg)
+[![Pylint Actions Status](https://github.com/Pasha-Ignatyuk/grow/workflows/Pylint/badge.svg)](https://github.com/Pasha-Ignatyuk/grow/actions)
 
-![Coverage Status](https://coveralls.io/repos/github/Pasha-Ignatyuk/grow/badge.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/Pasha-Ignatyuk/grow/badge.svg?branch=master)](https://coveralls.io/github/Pasha-Ignatyuk/grow?branch=master)
