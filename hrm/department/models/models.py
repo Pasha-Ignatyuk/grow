@@ -1,5 +1,9 @@
 """Model declaration"""
 from django.db import models
+from django.db.models import Avg
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class Department(models.Model):
@@ -8,8 +12,16 @@ class Department(models.Model):
     title = models.CharField(max_length=50)
 
     def __str__(self):
-        """string representation of an Department class object """
+        """string representation of a Department class object """
         return f'{self.title}'
+
+    @property
+    def average_salary(self):
+        """Method of department's average salary, using aggregate queries"""
+        average_salary = Employee.objects.filter(department=self).aggregate(Avg('salary'))
+        if average_salary['salary__avg'] is None:
+            return 'not applicable'
+        return round(average_salary['salary__avg'], 2)
 
 
 class Employee(models.Model):

@@ -1,0 +1,9 @@
+DEBUG 2021-12-05 18:50:43,103 selector_events 70514 139690429802304 Using selector: EpollSelector
+WARNING 2021-12-05 21:53:00,074 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2021-12-05 21:53:00,074 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2021-12-05 21:59:27,144 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2021-12-05 21:59:27,144 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2021-12-05 21:59:59,811 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2021-12-05 21:59:59,811 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2021-12-05 22:00:22,491 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
+WARNING 2021-12-05 22:00:22,491 log 70514 139690429802304 Not Found: /static/admin/js/nav_sidebar.js
