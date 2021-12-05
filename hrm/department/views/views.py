@@ -1,7 +1,7 @@
 """View - is responsible for displaying information (visualization)"""
-from django.shortcuts import render
-from department.models.models import Department, Employee
 import logging
+from django.shortcuts import render
+from department.models.models import Department
 
 logger = logging.getLogger(__name__)
 

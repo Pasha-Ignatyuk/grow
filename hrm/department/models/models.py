@@ -1,7 +1,7 @@
 """Model declaration"""
+import logging
 from django.db import models
 from django.db.models import Avg
-import logging
 
 logger = logging.getLogger(__name__)
 

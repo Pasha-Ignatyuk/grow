@@ -1,7 +1,7 @@
 """Module with Unit Tests"""
 from decimal import Decimal
 import datetime
-from django.test import TestCase, RequestFactory
+from django.test import TestCase
 from django.contrib.auth import get_user_model
 from department.models.models import Department, Employee
 
