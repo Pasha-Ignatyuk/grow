@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from department.views.views import departments_list
-
+from department.views.views import departments_list, department_detail, employee_detail, DepartmentUpdateView, \
+    DepartmentDeleteView, add_new_dept
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', departments_list, name='main_page'),
+    path('<int:pk>', department_detail, name='department_detail'),
+    path('<int:pk>/edit', DepartmentUpdateView.as_view(), name='add_new_dept'),
+    path('<int:pk>/delete', DepartmentDeleteView.as_view(), name='dept_deletion'),
+    path('department/<int:empl_id>', employee_detail, name='employee_detail'),
+    path('new', add_new_dept, name='add_new_dept'),
 ]

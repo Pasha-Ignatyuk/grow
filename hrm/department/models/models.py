@@ -2,6 +2,7 @@
 import logging
 from django.db import models
 from django.db.models import Avg
+from django.urls import reverse_lazy
 
 logger = logging.getLogger(__name__)
 
@@ -14,6 +15,10 @@ class Department(models.Model):
     def __str__(self):
         """string representation of a Department class object """
         return f'{self.title}'
+
+    def get_absolute_url(self):
+        """returns the edited page of department"""
+        return reverse_lazy('main_page')
 
     @property
     def average_salary(self):
