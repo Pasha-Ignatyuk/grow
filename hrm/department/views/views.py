@@ -45,10 +45,10 @@ class DepartmentDeleteView(DeleteView):
     template_name = 'dept_deletion.html'
 
 
-def department_detail(request, pk):
+def department_detail(request, prime_key):
     """View for a specific department page. Accepts department's ID """
-    department = get_object_or_404(Department, id=pk)
-    employee = Employee.objects.filter(department__id=pk)
+    department = get_object_or_404(Department, id=prime_key)
+    employee = Employee.objects.filter(department__id=prime_key)
     return render(request, 'department_detail.html', {'department': department,
                                                       'employee': employee})
 

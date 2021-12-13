@@ -21,9 +21,9 @@ from department.views.views import departments_list, department_detail, employee
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', departments_list, name='main_page'),
-    path('<int:pk>', department_detail, name='department_detail'),
-    path('<int:pk>/edit', DepartmentUpdateView.as_view(), name='add_new_dept'),
-    path('<int:pk>/delete', DepartmentDeleteView.as_view(), name='dept_deletion'),
+    path('<int:prime_key>', department_detail, name='department_detail'),
+    path('<int:prime_key>/edit', DepartmentUpdateView.as_view(), name='add_new_dept'),
+    path('<int:prime_key>/delete', DepartmentDeleteView.as_view(), name='dept_deletion'),
     path('department/<int:empl_id>', employee_detail, name='employee_detail'),
     path('new', add_new_dept, name='add_new_dept'),
 ]

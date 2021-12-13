@@ -4,7 +4,7 @@ import datetime
 from django.test import TestCase, RequestFactory
 from django.contrib.auth import get_user_model
 from department.models.models import Department, Employee
-from department.views.views import add_new_dept, department_detail
+from department.views.views import add_new_dept
 
 User = get_user_model()
 

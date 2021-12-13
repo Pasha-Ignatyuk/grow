@@ -16,7 +16,7 @@ class Department(models.Model):
         """string representation of a Department class object """
         return f'{self.title}'
 
-    def get_absolute_url(self):
+    def get_absolute_url():
         """returns the edited page of department"""
         return reverse_lazy('main_page')
 
