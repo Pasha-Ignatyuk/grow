@@ -13,17 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import uuid
 from django.contrib import admin
 from django.urls import path
-from department.views.views import departments_list, department_detail, employee_detail, DepartmentUpdateView, \
-    DepartmentDeleteView, add_new_dept
+from department.rest.my_api_views import DepartmentView, EmployeeView
+from department.views.views import DepartmentsCustomView
+# from department.views.views import DepartmentsList
 
 urlpatterns = [
+    path('api', DepartmentView.as_view()),
+    path('api/new', DepartmentView().as_view()),
+    path('api/update', DepartmentView().as_view()),
+    path('api/<int:id>', DepartmentView.as_view()),
+    path('api/empl', EmployeeView.as_view()),
+
     path('admin/', admin.site.urls),
-    path('', departments_list, name='main_page'),
-    path('<int:prime_key>', department_detail, name='department_detail'),
-    path('<int:prime_key>/edit', DepartmentUpdateView.as_view(), name='add_new_dept'),
-    path('<int:prime_key>/delete', DepartmentDeleteView.as_view(), name='dept_deletion'),
-    path('department/<int:empl_id>', employee_detail, name='employee_detail'),
-    path('new', add_new_dept, name='add_new_dept'),
+    path('', DepartmentsCustomView.as_view(), name='main_page'),
+    path('<int:id>', DepartmentsCustomView.as_view(), name='department_detail'),
+    path('new', DepartmentsCustomView.as_view(), name='add_new_dept'),
 ]

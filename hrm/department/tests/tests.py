@@ -1,10 +1,9 @@
 """Module with Unit Tests"""
 from decimal import Decimal
 import datetime
-from django.test import TestCase, RequestFactory
+from django.test import TestCase
 from django.contrib.auth import get_user_model
 from department.models.models import Department, Employee
-from department.views.views import add_new_dept
 
 User = get_user_model()
 
@@ -35,13 +34,6 @@ class HRMTestCase(TestCase):
         named "Test department" """
         average_salary = self.department.average_salary
         self.assertEqual(average_salary, 5500.00)
-
-    def test_add_new_dept(self):
-        """Checking the success of adding a department through the form"""
-        factory = RequestFactory()
-        request = factory.get('')
-        response = add_new_dept(request)
-        self.assertEqual(response.status_code, 200)
 
     def test_department_str_method(self):
         """Checking that the __str__ method of Department model works properly"""

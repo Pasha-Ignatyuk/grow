@@ -8,9 +8,9 @@
 
 {% block content %}
 
-<h1 class="text-center">{{ department.title }}</h1>
+<h1 class="text-center">{{ department.slug }}</h1>
 <h1>Employees:</h1>
-{% for employee in employee %}
+{% for employee in object_list %}
     <style>
        ul.hr {
         margin: 0; /* Обнуляем значение отступов */
@@ -23,13 +23,16 @@
        }
     </style>
     <ul class="hr">
-        <li><a href="{% url 'employee_detail' empl_id=employee.id %}">{{ employee.id  }}</a></li>
         <li>{{ employee.name }}</li>
         <li>{{ employee.surname }}</li>
         <li>{{ employee.birthday }}</li>
         <li>{{ employee.salary}}</li>
     </ul>
 {% endfor %}
+
+<p>Date of birth filtering</p>
+
+
 {% endblock %}
 
 </body>
