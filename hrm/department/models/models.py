@@ -23,10 +23,10 @@ class Department(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
-    @staticmethod
-    def get_absolute_url():
-        """returns the edited page of department"""
-        return reverse_lazy('main_page')
+    # @staticmethod
+    # def get_absolute_url():
+    #     """returns the edited page of department"""
+    #     return reverse_lazy('main_page')
 
     @property
     def average_salary(self):

@@ -1,16 +1,12 @@
 {% extends 'base.html' %}
-
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-    <title>{{ department.title }}</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-
 {% block content %}
-
-<h1 class="text-center">{{ department.id }}</h1>
-<h1>Employees:</h1>
-{% for employee in object %}
+{% for selection in selection %}
     <style>
        ul.hr {
         margin: 0; /* Обнуляем значение отступов */
@@ -23,17 +19,13 @@
        }
     </style>
     <ul class="hr">
-        <li>{{ employee.name }}</li>
-        <li>{{ employee.surname }}</li>
-        <li>{{ employee.birthday }}</li>
-        <li>{{ employee.salary}}</li>
+        <li>{{ selection.name }}</li>
+        <li>{{ selection.surname }}</li>
+        <li>{{ selection.birthday }}</li>
+        <li>{{ selection.salary}}</li>
     </ul>
+
 {% endfor %}
-
-<p>Date of birth filtering</p>
-
-
 {% endblock %}
-
 </body>
 </html>

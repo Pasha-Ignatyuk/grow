@@ -12,14 +12,18 @@
 {% for department in object_list %}
 
     <ul style="margin: 0; padding: 4px">
-        <li style="display: inline; margin-right: 5px; padding: 3px">{{ department.title }}</li>
+        <li style="display: inline; margin-right: 5px; padding: 3px"><a href="{% url 'department_detail' pk=department.id %}">{{ department.title }}</a></li>
         <li style="display: inline; margin-right: 5px; padding: 3px">{{department.average_salary}}</li>
-
+        <li style="display: inline; margin-right: 5px; padding: 3px"><a class="btn btn-default" href="{% url 'add_new_dept' pk=department.id %}">
+        EDIT DEPT<span class="glyphicon glyphicon-pencil"></span></a></li>
+        <li style="display: inline; margin-right: 5px; padding: 3px"><a class="btn btn-default" href="{% url 'dept_deletion' pk=department.id %}">
+        Delete DEPT<span class="glyphicon glyphicon-trash"></span></a></li>
     </ul>
 
 {% endfor %}
 
-
+<br><a class="btn btn-default" href="{% url 'add_new_dept' %}">
+    <span class="glyphicon glyphicon-plus"></span>ADD NEW DEPT</a><br>
 
 {% endblock %}
 </body>
