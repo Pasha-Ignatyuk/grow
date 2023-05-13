@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 import json
-from django.core.exceptions import ImproperlyConfigured
 from pathlib import Path
+from django.core.exceptions import ImproperlyConfigured
 import psycopg2.extensions
 
-"""JSON-based secrets module"""
 with open("/home/ceo/Документы/grow/hrm/hrm/hrm_secrets.json") as f:
     secrets = json.load(f)
 

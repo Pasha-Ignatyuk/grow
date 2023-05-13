@@ -1,6 +1,6 @@
 """APIViews for API endpoints"""
 from django.core.cache import cache
-from rest_framework.generics import ListAPIView,  CreateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.exceptions import ValidationError
 from rest_framework.pagination import LimitOffsetPagination
 from django_filters.rest_framework import DjangoFilterBackend
@@ -18,7 +18,7 @@ class EmployeePagination(LimitOffsetPagination):
     default_limit = 10
     max_limit = 100
 
-class DepartmentView(ListAPIView, CreateAPIView, RetrieveUpdateDestroyAPIView):
+class DepartmentView(ListCreateAPIView, RetrieveUpdateDestroyAPIView):
     """CRUD methods for Department model"""
     queryset = Department.objects.all().order_by('title')
     serializer_class = DepartmentSerializer

@@ -1,16 +1,15 @@
 {% extends 'base.html' %}
-
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>{{ department.title }}</title>
+    <title>{{ department.slug }}</title>
 </head>
 <body>
 
 {% block content %}
 
-<h1 class="text-center">{{ department.id }}</h1>
+<h1 class="text-center">{{ department.title }}</h1>
 <h1>Employees:</h1>
-{% for employee in object %}
+{% for employee in employee %}
     <style>
        ul.hr {
         margin: 0; /* Обнуляем значение отступов */
@@ -23,15 +22,22 @@
        }
     </style>
     <ul class="hr">
+        <li><a href="{% url 'employee_detail' empl_id=employee.id %}">{{ employee.id }}</a></li>
         <li>{{ employee.name }}</li>
         <li>{{ employee.surname }}</li>
         <li>{{ employee.birthday }}</li>
-        <li>{{ employee.salary}}</li>
+        <li>{{ employee.salary }}</li>
     </ul>
 {% endfor %}
 
 <p>Date of birth filtering</p>
-
+<form method="" class="post-form" action="{% url 'search' %}">
+{% csrf_token %}
+<input type="hidden" name="department_slug" value="{{ department.slug }}">
+From: <input type="date" name="startpoint" required>
+To: <input type="date" name="endpoint" required>
+<input type="submit" value="search">
+</form>
 
 {% endblock %}
 

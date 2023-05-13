@@ -11,5 +11,5 @@ class DepartmentAdmin(admin.ModelAdmin):
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
     """Designation of auto-filled  and displayed Employee model fields"""
-    list_display = ['id', 'name', 'surname', 'salary']
+    list_display = ['id', 'department', 'name', 'surname', 'salary']
     prepopulated_fields = {'slug': ('name', 'surname', 'birthday',)}

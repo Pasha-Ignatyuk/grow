@@ -18,7 +18,8 @@
 # from rest_framework.routers import SimpleRouter
 # from department.models.models import Department, Employee
 # from department.rest.my_api_views import DepartmentView, EmployeeView
-# from department.views.views import DepartmentsList, DepartmentDetail, EmployeeDetail, DepartmentDeleteView, AddNewDept
+# from department.views.views import DepartmentsList, DepartmentDetail, EmployeeDetail, DepartmentDeleteView, \
+# AddNewDept
 # from department.service.service import DepartmentService, EmployeeService
 #
 #

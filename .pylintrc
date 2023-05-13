@@ -3,7 +3,7 @@
 # Files or directories to be skipped. They should be base names, not paths.
 ignore=CVS, migrations, venv, 0001_initial
 django-settings-module=hrm.settings
-
+load-plugins=pylint_django
 
 [IMPORTS]
 
@@ -11,3 +11,4 @@ django-settings-module=hrm.settings
 allow-any-import-level=django.core.management
 
 [MESSAGES CONTROL]
+disable=R0901, W0221, C2801
