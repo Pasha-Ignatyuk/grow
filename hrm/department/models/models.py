@@ -1,6 +1,5 @@
 """Model declaration"""
 import logging
-from datetime import datetime
 from django.db import models
 from django.db.models import Avg
 from django.urls import reverse_lazy
