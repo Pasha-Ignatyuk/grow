@@ -2,7 +2,7 @@ name: Pylint
 
 on:
   push:
-    branches: [master, develop]
+    branches: [master, develop, finish]
 
 jobs:
   build:
@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: 3.8
     - name: Install dependencies
@@ -24,5 +24,5 @@ jobs:
         export SECRET_KEY="hjk-xg+c16x+i1%77bs2wi78h&sxn#l7!b6fzddtrv%*$p_mey"
         export DB_USER=${{ secrets.DB_USER }}
         export DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-        export DB_NAME=${{ secrets.DB_NAME }}
+        export GROW_DB_NAME=${{ secrets.GROW_DB_NAME }}
         pylint --load-plugins pylint_django hrm/department

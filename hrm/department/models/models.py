@@ -53,5 +53,5 @@ class Employee(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name + self.surname + self.birthday)
+            self.slug = slugify(self.name + self.surname + self.birthday.strftime("%d/%m/%y"))
         super().save(*args, **kwargs)
