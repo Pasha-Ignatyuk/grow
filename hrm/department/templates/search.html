@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+<h1>Search Results</h1>
+{% for selection in selection %}
+    <style>
+       ul.hr {
+        margin: 0; /* Обнуляем значение отступов */
+        padding: 4px; /* Значение полей */
+       }
+       ul.hr li {
+        display: inline; /* Отображать как строчный элемент */
+        margin-right: 5px; /* Отступ слева */
+        padding: 3px; /* Поля вокруг текста */
+       }
+    </style>
+    <ul class="hr">
+        <li>{{ selection.name }}</li>
+        <li>{{ selection.surname }}</li>
+        <li>{{ selection.birthday }}</li>
+        <li>{{ selection.salary}}</li>
+    </ul>
+
+{% endfor %}
+{% endblock %}
+</body>
+</html>
