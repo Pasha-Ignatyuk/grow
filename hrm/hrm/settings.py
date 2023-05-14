@@ -16,7 +16,7 @@ from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
 import psycopg2.extensions
 
-with open("/home/ceo/Документы/grow/hrm/hrm/hrm_secrets.json") as f:
+with open('hrm/hrm_secrets.json') as f:
     secrets = json.load(f)
 
 

@@ -1,5 +1,6 @@
 """Model declaration"""
 import logging
+from datetime import datetime
 from django.db import models
 from django.db.models import Avg
 from django.urls import reverse_lazy
@@ -53,5 +54,5 @@ class Employee(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = slugify(self.name + self.surname + self.birthday)
+            self.slug = slugify(self.name + self.surname + self.birthday.strftime("%d/%m/%y"))
         super().save(*args, **kwargs)
